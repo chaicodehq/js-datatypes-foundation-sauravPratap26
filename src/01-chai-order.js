@@ -51,16 +51,30 @@ export function getChaiOrderLength(order) {
 }
 
 export function shoutChaiOrder(order) {
+  if (typeof order !== "string" || order.trim().length === 0) return "";
+  return order.trim().toUpperCase();
 }
 
 export function whisperChaiOrder(order) {
   // Your code here
+  if (typeof order !== "string") return "";
+  const trimmed = order.trim();
+  if (trimmed.length === 0) return "";
+  return trimmed.toLowerCase();
 }
 
 export function hasSpecialIngredient(order, ingredient) {
   // Your code here
+  if (typeof order !== "string" || typeof ingredient !== "string") return false;
+  return order
+    .trim()
+    .toLowerCase()
+    .split(" ")
+    .includes(ingredient.trim().toLowerCase());
 }
 
 export function getFirstAndLastChar(order) {
   // Your code here
+  if (typeof order !== "string" || order.trim().length === 0) return null;
+  return { first: order.trim().charAt(0), last: order.trim().at(-1) };
 }
