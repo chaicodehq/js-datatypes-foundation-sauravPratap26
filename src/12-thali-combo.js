@@ -114,5 +114,5 @@ export function generateThaliReceipt(customerName, thalis) {
 
   const total = thalis.reduce((acc, thali) => acc + thali.price, 0).toFixed(2);
 
-  return `THALI RECEIPT\n---\nCustomer: ${customerName.toUpperCase()}\n${lineItems}\n---\nTotal: Rs.${total}\nItems: ${thalis.length}`;
+  return `THALI RECEIPT\n---\nCustomer: ${customerName.toUpperCase()}\n${lineItems}\n---\nTotal: Rs.${total}\nItems: ${thalis.length}`; 
 }
